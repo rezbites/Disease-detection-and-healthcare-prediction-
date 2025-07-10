@@ -1,0 +1,9 @@
+your_project/
+├── app.py
+├── model.py
+├── dataset_mini_prj.csv
+├── static/
+│   └── style.css
+└── templates/
+    ├── base.html
+    └── index.html

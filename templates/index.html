@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Disease Predictor{% endblock %}
+{% block content %}
+<div class="container">
+    <h1>Disease Predictor</h1>
+    <p>Enter your symptoms separated by commas (e.g. fever,cough,sore throat)</p>
+    
+    <form method="POST" action="/">
+        <input type="text" name="symptoms" placeholder="Enter symptoms..." required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if details %}
+    <div class="results">
+        <h2>Prediction Results</h2>
+        <table>
+            <tr><th>Entered Symptoms</th><td>{{ details.Symptoms }}</td></tr>
+            <tr><th>Predicted Disease</th><td>{{ details.Disease }}</td></tr>
+            <tr><th>Cure</th><td>{{ details.Cure }}</td></tr>
+            <tr><th>Recommended Doctor</th><td>{{ details.Doctor }}</td></tr>
+            <tr><th>Risk Level</th><td>{{ details.Risk }}</td></tr>
+            <tr><th>Confidence</th><td>{{ details.Probability }}</td></tr>
+        </table>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
